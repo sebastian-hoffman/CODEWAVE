@@ -72,8 +72,10 @@ body {
 
 .logo {
   display: block;
-  width: 168px;
+  width: auto;
+  height: 52px;
   max-width: 42vw;
+  object-fit: contain;
 }
 
 .main-nav {
@@ -372,7 +374,9 @@ textarea:focus {
 }
 
 .logo-footer {
-  width: 190px;
+  width: auto;
+  height: 84px;
+  max-width: min(40vw, 120px);
   margin: 0 auto 14px;
   filter: brightness(0) invert(1);
 }
@@ -419,6 +423,14 @@ textarea:focus {
 @media (max-width: 760px) {
   .site-header {
     padding: 10px 12px;
+  }
+
+  .logo {
+    height: 44px;
+  }
+
+  .logo-footer {
+    height: 72px;
   }
 
   .menu-btn {
