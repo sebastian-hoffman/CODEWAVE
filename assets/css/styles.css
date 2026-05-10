@@ -73,7 +73,7 @@ body {
 .logo {
   display: block;
   width: auto;
-  height: 52px;
+  height: 72px;
   max-width: 42vw;
   object-fit: contain;
 }
@@ -375,8 +375,8 @@ textarea:focus {
 
 .logo-footer {
   width: auto;
-  height: 84px;
-  max-width: min(40vw, 120px);
+  height: 128px;
+  max-width: min(60vw, 180px);
   margin: 0 auto 14px;
   filter: brightness(0) invert(1);
 }
@@ -426,11 +426,11 @@ textarea:focus {
   }
 
   .logo {
-    height: 44px;
+    height: 58px;
   }
 
   .logo-footer {
-    height: 72px;
+    height: 104px;
   }
 
   .menu-btn {
