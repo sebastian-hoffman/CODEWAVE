@@ -1,9 +1,12 @@
-FROM nginx:1.27-alpine
+FROM node:20-alpine
 
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/templates/default.conf.template
-COPY . /usr/share/nginx/html
+WORKDIR /app
+
+COPY package.json ./
+RUN npm install --omit=dev
+
+COPY . .
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "export PORT=${PORT:-8080} && envsubst '$PORT' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+CMD ["npm", "start"]

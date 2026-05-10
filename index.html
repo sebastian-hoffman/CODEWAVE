@@ -196,8 +196,9 @@
             ¿Qué proceso querés mejorar?
             <textarea name="mensaje" rows="4" required></textarea>
           </label>
-          <button type="submit" class="btn btn-primary">Enviar consulta</button>
-          <p class="form-note">Al enviar, se abrirá tu cliente de correo para terminar de enviar el mensaje.</p>
+          <button type="submit" class="btn btn-primary" id="contactSubmit">Enviar consulta</button>
+          <p class="form-note">Tu consulta se enviará directamente al equipo de Codewave.</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>

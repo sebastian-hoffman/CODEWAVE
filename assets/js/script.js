@@ -31,22 +31,48 @@ const observer = new IntersectionObserver(
 revealItems.forEach((item) => observer.observe(item));
 
 const contactForm = document.getElementById("contactForm");
+const contactSubmit = document.getElementById("contactSubmit");
+const formStatus = document.getElementById("formStatus");
 
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+if (contactForm && contactSubmit && formStatus) {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const formData = new FormData(contactForm);
-    const nombre = String(formData.get("nombre") || "").trim();
-    const empresa = String(formData.get("empresa") || "").trim();
-    const email = String(formData.get("email") || "").trim();
-    const mensaje = String(formData.get("mensaje") || "").trim();
+    const payload = {
+      nombre: String(formData.get("nombre") || "").trim(),
+      empresa: String(formData.get("empresa") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      mensaje: String(formData.get("mensaje") || "").trim()
+    };
 
-    const subject = encodeURIComponent(`Nueva consulta web - ${empresa}`);
-    const body = encodeURIComponent(
-      `Nombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\n\nObjetivo del proyecto:\n${mensaje}`
-    );
+    formStatus.textContent = "Enviando consulta...";
+    formStatus.dataset.state = "loading";
+    contactSubmit.disabled = true;
 
-    window.location.href = `mailto:contacto@codewave.ar?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || "No pudimos enviar la consulta.");
+      }
+
+      contactForm.reset();
+      formStatus.textContent = result.message || "Consulta enviada. Te responderemos a la brevedad.";
+      formStatus.dataset.state = "success";
+    } catch (error) {
+      formStatus.textContent = error.message || "No pudimos enviar la consulta.";
+      formStatus.dataset.state = "error";
+    } finally {
+      contactSubmit.disabled = false;
+    }
   });
 }
