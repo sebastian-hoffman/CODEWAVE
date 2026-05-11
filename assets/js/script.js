@@ -1,5 +1,6 @@
 const menuBtn = document.getElementById("menuBtn");
 const mainNav = document.getElementById("mainNav");
+document.body.dataset.heroVariant = "c";
 
 if (menuBtn && mainNav) {
   menuBtn.addEventListener("click", () => {
