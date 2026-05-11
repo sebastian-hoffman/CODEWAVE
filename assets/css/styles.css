@@ -141,7 +141,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.75;
+  opacity: 1;
   pointer-events: none;
   animation: float 15s ease-in-out infinite;
 }
@@ -292,13 +292,13 @@ h1 {
 
 /* Icons in cards and sections */
 .card-icon {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   color: var(--primary);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   flex-shrink: 0;
   transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), color 300ms ease;
-  stroke-width: 1.8;
+  stroke-width: 2;
 }
 
 .card:hover .card-icon {
