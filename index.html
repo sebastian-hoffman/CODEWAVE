@@ -55,9 +55,9 @@
         <svg class="hero-decoration" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
             <linearGradient id="premiumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#005bdb;stop-opacity:0.12" />
-              <stop offset="50%" style="stop-color:#00a8a8;stop-opacity:0.08" />
-              <stop offset="100%" style="stop-color:#0f86e5;stop-opacity:0.1" />
+              <stop offset="0%" style="stop-color:#005bdb;stop-opacity:0.25" />
+              <stop offset="50%" style="stop-color:#00a8a8;stop-opacity:0.18" />
+              <stop offset="100%" style="stop-color:#0f86e5;stop-opacity:0.22" />
             </linearGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -68,27 +68,27 @@
             </filter>
           </defs>
           
-          <!-- Malla de fondo (grid sutil) -->
-          <g class="grid" opacity="0.15">
-            <line x1="0" y1="0" x2="1200" y2="600" stroke="#005bdb" stroke-width="0.5"/>
-            <line x1="1200" y1="0" x2="0" y2="600" stroke="#00a8a8" stroke-width="0.5"/>
-            <line x1="300" y1="0" x2="300" y2="600" stroke="#005bdb" stroke-width="0.5" opacity="0.3"/>
-            <line x1="600" y1="0" x2="600" y2="600" stroke="#00a8a8" stroke-width="0.5" opacity="0.3"/>
-            <line x1="900" y1="0" x2="900" y2="600" stroke="#005bdb" stroke-width="0.5" opacity="0.3"/>
-            <line x1="0" y1="150" x2="1200" y2="150" stroke="#00a8a8" stroke-width="0.5" opacity="0.2"/>
-            <line x1="0" y1="300" x2="1200" y2="300" stroke="#005bdb" stroke-width="0.5" opacity="0.2"/>
-            <line x1="0" y1="450" x2="1200" y2="450" stroke="#00a8a8" stroke-width="0.5" opacity="0.2"/>
+          <!-- Gradiente de fondo suave (primero) -->
+          <rect width="1200" height="600" fill="url(#premiumGrad)"/>
+          
+          <!-- Malla de fondo (grid visible) -->
+          <g class="grid" opacity="0.35">
+            <line x1="0" y1="0" x2="1200" y2="600" stroke="#005bdb" stroke-width="0.8"/>
+            <line x1="1200" y1="0" x2="0" y2="600" stroke="#00a8a8" stroke-width="0.8"/>
+            <line x1="300" y1="0" x2="300" y2="600" stroke="#005bdb" stroke-width="0.6" opacity="0.5"/>
+            <line x1="600" y1="0" x2="600" y2="600" stroke="#00a8a8" stroke-width="0.6" opacity="0.5"/>
+            <line x1="900" y1="0" x2="900" y2="600" stroke="#005bdb" stroke-width="0.6" opacity="0.5"/>
+            <line x1="0" y1="150" x2="1200" y2="150" stroke="#00a8a8" stroke-width="0.6" opacity="0.35"/>
+            <line x1="0" y1="300" x2="1200" y2="300" stroke="#005bdb" stroke-width="0.6" opacity="0.35"/>
+            <line x1="0" y1="450" x2="1200" y2="450" stroke="#00a8a8" stroke-width="0.6" opacity="0.35"/>
           </g>
           
           <!-- Elementos flotantes animados (puntos de conexión) -->
-          <circle class="float-dot" cx="100" cy="80" r="2" fill="#005bdb" opacity="0.4" filter="url(#glow)"/>
-          <circle class="float-dot" cx="1100" cy="150" r="2.5" fill="#00a8a8" opacity="0.35" filter="url(#glow)" style="animation-delay: 0.3s"/>
-          <circle class="float-dot" cx="400" cy="400" r="2" fill="#0f86e5" opacity="0.3" filter="url(#glow)" style="animation-delay: 0.6s"/>
-          <circle class="float-dot" cx="800" cy="520" r="2.5" fill="#005bdb" opacity="0.4" filter="url(#glow)" style="animation-delay: 0.9s"/>
-          <circle class="float-dot" cx="600" cy="100" r="1.8" fill="#00a8a8" opacity="0.25" filter="url(#glow)" style="animation-delay: 1.2s"/>
-          
-          <!-- Gradiente de fondo suave -->
-          <rect width="1200" height="600" fill="url(#premiumGrad)"/>
+          <circle class="float-dot" cx="100" cy="80" r="3" fill="#005bdb" opacity="0.7" filter="url(#glow)"/>
+          <circle class="float-dot" cx="1100" cy="150" r="3.5" fill="#00a8a8" opacity="0.65" filter="url(#glow)" style="animation-delay: 0.3s"/>
+          <circle class="float-dot" cx="400" cy="400" r="3" fill="#0f86e5" opacity="0.6" filter="url(#glow)" style="animation-delay: 0.6s"/>
+          <circle class="float-dot" cx="800" cy="520" r="3.5" fill="#005bdb" opacity="0.7" filter="url(#glow)" style="animation-delay: 0.9s"/>
+          <circle class="float-dot" cx="600" cy="100" r="2.5" fill="#00a8a8" opacity="0.55" filter="url(#glow)" style="animation-delay: 1.2s"/>
         </svg>
         <p class="eyebrow reveal">Software con velocidad de startup, respaldo institucional y foco en negocio</p>
         <h1 class="reveal delay-1">Transformamos procesos de empresa en soluciones digitales en ciclos cortos.</h1>
